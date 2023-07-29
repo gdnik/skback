@@ -11,6 +11,15 @@ public class Back {
 
         //secure("deploy/keystore.jks", "Skilyl#inC@734", null, null);
 
+        options("/*", (request, response) -> "PREFLIGHT REQUEST DONE");
+
+        after((request, response) -> {
+            response.header("Access-Control-Allow-Origin", "http://getflow.me");
+            response.header("Access-Control-Allow-Headers", "Content-Type");
+            response.header("Access-Control-Allow-Methods", "*");
+            response.header("Access-Control-Allow-Credentials", "true");
+        });
+
         get("/", (req, res) -> {
             System.out.println("Skillsy Secure Backend");
             return "Skillsy Backend";
