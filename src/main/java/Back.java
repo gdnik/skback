@@ -9,12 +9,12 @@ import models.Link;
 public class Back {
     public static void main(String[] args) {
 
-        //secure("deploy/keystore.jks", "Skilyl#inC@734", null, null);
+        secure("deploy/keystore.jks", "skillsy12345", null, null);
 
         options("/*", (request, response) -> "PREFLIGHT REQUEST DONE");
 
         after((request, response) -> {
-            response.header("Access-Control-Allow-Origin", "http://getflow.me");
+            response.header("Access-Control-Allow-Origin", "https://getflow.me");
             response.header("Access-Control-Allow-Headers", "Content-Type");
             response.header("Access-Control-Allow-Methods", "*");
             response.header("Access-Control-Allow-Credentials", "true");
